@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Maritime Bowstrings — Handmade Bowstrings',
   description:
-    'Custom handmade bowstrings for longbows and recurves. Made to order by an archer who cares about quality.',
+    'Custom handmade bowstrings for longbows and recurves. Made to order by a fellow archer who cares about quality.',
 };
 
 export default function RootLayout({

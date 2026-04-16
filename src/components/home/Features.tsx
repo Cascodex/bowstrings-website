@@ -2,25 +2,25 @@ const features = [
   {
     title: 'Made to Order',
     description:
-      'No shelf strings here. Every bowstring is twisted specifically for your bow — your specs, your colors, your style.',
+      'No shelved strings. Every bowstring is twisted specifically for your bow.',
     icon: '🏹',
   },
   {
     title: 'Quality Materials',
     description:
-      'Choose from Dacron B50, Fast Flight, Dyneema, and 8125G. The right material for traditional and modern recurves alike.',
+      'Currently stocking BCY D97, a high-performance blend of Dyneema and Vectran AKA "Hybrid". Other materials can be sourced on request.',
     icon: '🧵',
   },
   {
     title: 'Custom Colors',
     description:
-      'Mix and match strand colors, serving thread, and loop style. Your string should reflect your archery.',
+      'Mix and match strand colors and serving options to make a string that suits your style.',
     icon: '🎨',
   },
   {
     title: 'Pre-Stretched',
     description:
-      'Every string is pre-stretched up to 100 lbs before it ships, so it settles in faster and shoots more consistently right from the start.',
+      'Every string is pre-stretched to 100 lbs before it ships, so it settles in faster and shoots more consistently right from the start.',
     icon: '🎯',
   },
 ];
