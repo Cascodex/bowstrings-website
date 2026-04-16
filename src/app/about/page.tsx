@@ -12,18 +12,18 @@ export default function AboutPage() {
       <div className="space-y-5 text-stone-600 leading-relaxed">
         <p>
           I grew up in rural Nova Scotia, and archery found me early. My first bow was a cheap
-          compound at age 12 — but shooting with a sight never felt right. I stripped them off
+          compound but shooting with a sight never felt right. I stripped it off
           and started shooting instinctive before I even knew what that meant.
         </p>
         <p>
-          I shot for years until post-secondary pushed everything else to the margins. Archery
-          sat in the corner and collected dust for longer than I&apos;d like to admit.
+          I shot for years until post-secondary pushed everything else to the margins. Sadly, archery
+          sat in the corner and collected dust.
         </p>
         <p>
-          Years later, an old friend pulled me back in. He&apos;d gone deep into traditional
-          archery — recurves, proper form, the whole thing. He helped me buy my first recurve
-          and taught me what he knew. Something clicked, and I&apos;ve been shooting every
-          chance I get since.
+          Years later, an old friend reconnected me with the sport. He&apos;d gone deep into traditional
+          archery. He helped me buy my first recurve
+          and taught me everything he knew. I&apos;ve been shooting every
+          chance I get.
         </p>
         <p>
           My first strings came from Grizzly Jim — a name a lot of traditional archers will
@@ -31,11 +31,6 @@ export default function AboutPage() {
           twist construction, built a jig, and haven&apos;t looked back. Those strings have
           since carried me into the Nova Scotian woods, where I&apos;ve taken my first Black
           bear and Whitetail deer.
-        </p>
-        <p>
-          Maritime Bowstrings is a small, made-to-order operation. Every string is built to
-          your specs, pre-stretched up to 100 lbs, and shipped anywhere in Canada. I take
-          pride in the work and want to deliver something Canadian archers can rely on.
         </p>
         <p className="text-amber-600 font-medium">— Gregory Begin</p>
         <p>
