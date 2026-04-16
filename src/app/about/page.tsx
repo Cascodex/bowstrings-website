@@ -11,17 +11,19 @@ export default function AboutPage() {
       <h1 className="text-3xl font-bold text-stone-800 mb-6">About Heritage Strings</h1>
       <div className="space-y-5 text-stone-600 leading-relaxed">
         <p>
-          I&apos;ve been shooting traditional bows for years — longbows, recurves, instinctive
-          shooting in the woods and on the range. After going through enough factory strings to know
-          what I was missing, I started learning to make my own.
+          Based out of Nova Scotia, Canada, I&apos;ve been fascinated by traditional archery and the
+          craft behind it. Making strings by hand is part of connecting with that tradition — every
+          twist is intentional.
         </p>
         <p>
-          Every string I make is twisted by hand on a traditional jig, inspected carefully, and shot
-          before it ships. I care about the quality because I shoot these myself.
+          Every string is flemish twist construction, made by hand on a traditional jig. Before it
+          ships, each string is pre-stretched up to 100 lbs. This means less creep out of the box
+          — your string will still settle in over the first few shots, but it gets there much faster
+          than an un-prestretched string.
         </p>
         <p>
-          Heritage Strings is a small, made-to-order operation. That means no inventory, no rush, no
-          compromises. Your string is made for your bow, to your specs, when you need it.
+          Heritage Strings is a small, made-to-order operation out of Nova Scotia. No inventory,
+          no rush, no shortcuts. Your string is made to your specs, when you need it.
         </p>
         <p>
           Have a question before you order? Feel free to reach out directly at{' '}

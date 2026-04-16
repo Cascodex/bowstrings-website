@@ -1,6 +1,8 @@
 export type BowType = 'Longbow' | 'Recurve';
 
-export type StringMaterial = 'Dacron B50' | 'Fast Flight' | 'Dyneema' | '8125G';
+export type StringMaterial = 'BCY D97';
+
+export type ServingColor = 'White/Black' | 'Red/Black';
 
 export interface OrderFormData {
   // Contact
@@ -11,15 +13,19 @@ export interface OrderFormData {
   bowType: BowType;
   amoLength: string;
   // String specs
-  numStrands: string;
   material: StringMaterial;
   // Colors
   primaryColor: string;
   secondaryColor: string;
-  servingColor: string;
+  servingColor: ServingColor;
   // Options
-  servingStyle: string;
   nockingPoint: boolean;
+  // Shipping
+  shippingName: string;
+  streetAddress: string;
+  city: string;
+  province: string;
+  postalCode: string;
   // Notes
   notes: string;
 }

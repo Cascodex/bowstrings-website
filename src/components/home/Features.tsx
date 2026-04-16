@@ -18,9 +18,9 @@ const features = [
     icon: '🎨',
   },
   {
-    title: 'Archer-Tested',
+    title: 'Pre-Stretched',
     description:
-      'Built and shot by an archer who knows what matters in the field and on the range. Quality you can trust at the draw.',
+      'Every string is pre-stretched up to 100 lbs before it ships, so it settles in faster and shoots more consistently right from the start.',
     icon: '🎯',
   },
 ];

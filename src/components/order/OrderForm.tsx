@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { STRING_MATERIALS, STRAND_COUNTS, STRING_COLORS, SERVING_STYLES } from '@/lib/constants';
+import { STRING_MATERIALS, STRING_COLORS, SERVING_COLOR_OPTIONS, CANADIAN_PROVINCES } from '@/lib/constants';
 import type { OrderFormData } from '@/lib/types';
 
 const defaultForm: OrderFormData = {
@@ -10,13 +10,16 @@ const defaultForm: OrderFormData = {
   phone: '',
   bowType: 'Longbow',
   amoLength: '',
-  numStrands: '12',
-  material: 'Dacron B50',
+  material: 'BCY D97',
   primaryColor: 'Black',
   secondaryColor: '',
-  servingColor: 'Black',
-  servingStyle: 'standard',
+  servingColor: 'White/Black',
   nockingPoint: false,
+  shippingName: '',
+  streetAddress: '',
+  city: '',
+  province: 'NS',
+  postalCode: '',
   notes: '',
 };
 
@@ -151,42 +154,18 @@ export default function OrderForm() {
         <legend className="text-lg font-semibold text-stone-800 border-b border-stone-200 pb-2 w-full">
           String Specifications
         </legend>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label className="block">
-            <span className={labelClass}>Material *</span>
-            <select
-              name="material"
-              required
-              value={form.material}
-              onChange={handleChange}
-              className={inputClass}
-            >
-              {STRING_MATERIALS.map((m) => (
-                <option key={m.value} value={m.value}>
-                  {m.label}
-                </option>
-              ))}
-            </select>
-            <p className="text-xs text-stone-400 mt-1">
-              {STRING_MATERIALS.find((m) => m.value === form.material)?.description}
+        <div className="space-y-3">
+          <div>
+            <p className={labelClass}>Material</p>
+            <p className="mt-1 text-sm text-stone-800 font-medium">
+              {STRING_MATERIALS[0].label}
             </p>
-          </label>
-          <label className="block">
-            <span className={labelClass}>Strand Count *</span>
-            <select
-              name="numStrands"
-              required
-              value={form.numStrands}
-              onChange={handleChange}
-              className={inputClass}
-            >
-              {STRAND_COUNTS.map((s) => (
-                <option key={s} value={s}>
-                  {s} strands
-                </option>
-              ))}
-            </select>
-          </label>
+            <p className="text-xs text-stone-400 mt-1">{STRING_MATERIALS[0].description}</p>
+            <p className="text-xs text-amber-600 mt-1">
+              Other materials available on request — mention in special requests below (longer lead time).
+            </p>
+          </div>
+          <p className="text-xs text-stone-400">All strings are 12-strand flemish twist construction, pre-stretched up to 100 lbs.</p>
         </div>
       </fieldset>
 
@@ -233,60 +212,112 @@ export default function OrderForm() {
               onChange={handleChange}
               className={inputClass}
             >
-              {STRING_COLORS.map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
-          </label>
-        </div>
-      </fieldset>
-
-      {/* Serving & Options */}
-      <fieldset className="space-y-4">
-        <legend className="text-lg font-semibold text-stone-800 border-b border-stone-200 pb-2 w-full">
-          Serving &amp; Options
-        </legend>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label className="block">
-            <span className={labelClass}>Serving Style *</span>
-            <select
-              name="servingStyle"
-              required
-              value={form.servingStyle}
-              onChange={handleChange}
-              className={inputClass}
-            >
-              {SERVING_STYLES.map((s) => (
+              {SERVING_COLOR_OPTIONS.map((s) => (
                 <option key={s.value} value={s.value}>{s.label}</option>
               ))}
             </select>
           </label>
-          <label className="flex items-center gap-3 cursor-pointer mt-6">
+        </div>
+      </fieldset>
+
+      {/* Options */}
+      <fieldset className="space-y-4">
+        <legend className="text-lg font-semibold text-stone-800 border-b border-stone-200 pb-2 w-full">
+          Options
+        </legend>
+        <label className="flex items-center gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="nockingPoint"
+            checked={form.nockingPoint}
+            onChange={handleChange}
+            className="w-4 h-4 accent-amber-500"
+          />
+          <span className={labelClass}>Add brass nocking point</span>
+        </label>
+      </fieldset>
+
+      {/* Shipping */}
+      <fieldset className="space-y-4">
+        <legend className="text-lg font-semibold text-stone-800 border-b border-stone-200 pb-2 w-full">
+          Shipping Address <span className="text-sm font-normal text-stone-400">(Canada only)</span>
+        </legend>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label className="block md:col-span-2">
+            <span className={labelClass}>Ship To (name) *</span>
             <input
-              type="checkbox"
-              name="nockingPoint"
-              checked={form.nockingPoint}
+              type="text"
+              name="shippingName"
+              required
+              placeholder="Full name for shipping label"
+              value={form.shippingName}
               onChange={handleChange}
-              className="w-4 h-4 accent-amber-500"
+              className={inputClass}
             />
-            <span className={labelClass}>Add brass nocking point</span>
+          </label>
+          <label className="block md:col-span-2">
+            <span className={labelClass}>Street Address *</span>
+            <input
+              type="text"
+              name="streetAddress"
+              required
+              value={form.streetAddress}
+              onChange={handleChange}
+              className={inputClass}
+            />
+          </label>
+          <label className="block">
+            <span className={labelClass}>City *</span>
+            <input
+              type="text"
+              name="city"
+              required
+              value={form.city}
+              onChange={handleChange}
+              className={inputClass}
+            />
+          </label>
+          <label className="block">
+            <span className={labelClass}>Province *</span>
+            <select
+              name="province"
+              required
+              value={form.province}
+              onChange={handleChange}
+              className={inputClass}
+            >
+              {CANADIAN_PROVINCES.map((p) => (
+                <option key={p.value} value={p.value}>{p.label}</option>
+              ))}
+            </select>
+          </label>
+          <label className="block">
+            <span className={labelClass}>Postal Code *</span>
+            <input
+              type="text"
+              name="postalCode"
+              required
+              placeholder="A1A 1A1"
+              value={form.postalCode}
+              onChange={handleChange}
+              className={inputClass}
+            />
           </label>
         </div>
       </fieldset>
 
-      {/* Notes */}
+      {/* Special Requests */}
       <fieldset className="space-y-4">
         <legend className="text-lg font-semibold text-stone-800 border-b border-stone-200 pb-2 w-full">
-          Additional Notes
+          Special Requests
         </legend>
         <label className="block">
-          <span className={labelClass}>Anything else I should know?</span>
           <textarea
             name="notes"
             rows={4}
             value={form.notes}
             onChange={handleChange}
-            placeholder="Brace height, specific bow model, special requests..."
+            placeholder="Special requests..."
             className={inputClass}
           />
         </label>

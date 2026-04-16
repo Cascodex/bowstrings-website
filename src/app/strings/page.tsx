@@ -10,19 +10,23 @@ export const metadata: Metadata = {
 const steps: [string, string][] = [
   [
     'You place an order',
-    'Fill out the order form with your bow type, AMO length, strand count, material, and color preferences.',
+    'Fill out the order form with your bow type, AMO length, material, and color preferences.',
   ],
   [
     'I confirm the details',
-    "Within 1–2 business days, I'll reach out to confirm specs, timeline, and pricing.",
+    "Within 1\u20132 business days, I'll reach out to confirm specs, timeline, and pricing.",
   ],
   [
     'String is hand-twisted',
-    'Your string is made by hand on a traditional jig — no shortcuts, no assembly line.',
+    'Your string is flemish twist construction, made by hand on a traditional jig \u2014 12 strands, no shortcuts.',
   ],
   [
-    'Finished and shipped',
-    'The string is inspected, served, and shipped directly to you.',
+    'Pre-stretched up to 100 lbs',
+    'Before shipping, every string is pre-stretched. This dramatically reduces creep \u2014 your string will still settle slightly over the first few shots, but stabilises much faster than an un-prestretched string.',
+  ],
+  [
+    'Inspected and shipped',
+    'The string is checked over and shipped directly to you anywhere in Canada.',
   ],
 ];
 
@@ -37,14 +41,20 @@ export default function StringsPage() {
 
       {/* Materials */}
       <section className="mb-16">
-        <h2 className="text-xl font-semibold text-stone-800 mb-6">Materials</h2>
+        <h2 className="text-xl font-semibold text-stone-800 mb-2">Material</h2>
+        <p className="text-stone-500 text-sm mb-6">
+          BCY D97 is currently stocked. Other materials can be sourced on request \u2014 just note it in your special requests and expect a longer lead time.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {STRING_MATERIALS.map((m) => (
             <div
               key={m.value}
-              className="border border-stone-200 rounded-lg p-6 bg-white shadow-sm"
+              className="border border-amber-200 rounded-lg p-6 bg-white shadow-sm"
             >
-              <h3 className="font-semibold text-stone-800 mb-1">{m.label}</h3>
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="font-semibold text-stone-800">{m.label}</h3>
+                <span className="text-xs bg-amber-100 text-amber-700 font-medium px-2 py-0.5 rounded-full">In Stock</span>
+              </div>
               <p className="text-stone-500 text-sm">{m.description}</p>
             </div>
           ))}

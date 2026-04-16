@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="bg-stone-800 text-stone-100 py-24 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">
-          Handcrafted in the USA
+          Handcrafted in Nova Scotia, Canada
         </p>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Bowstrings Built for{' '}
