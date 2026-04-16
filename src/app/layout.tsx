@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Heritage Strings — Handmade Bowstrings',
+  title: 'Maritime Bowstrings — Handmade Bowstrings',
   description:
     'Custom handmade bowstrings for longbows and recurves. Made to order by an archer who cares about quality.',
 };

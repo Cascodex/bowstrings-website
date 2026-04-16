@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About | Heritage Strings',
-  description: 'About the maker behind Heritage Strings.',
+  title: 'About | Maritime Bowstrings',
+  description: 'About the maker behind Maritime Bowstrings.',
 };
 
 export default function AboutPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold text-stone-800 mb-6">About Heritage Strings</h1>
+      <h1 className="text-3xl font-bold text-stone-800 mb-6">About Maritime Bowstrings</h1>
       <div className="space-y-5 text-stone-600 leading-relaxed">
         <p>
           Based out of Nova Scotia, Canada, I&apos;ve been fascinated by traditional archery and the
@@ -22,16 +22,16 @@ export default function AboutPage() {
           than an un-prestretched string.
         </p>
         <p>
-          Heritage Strings is a small, made-to-order operation out of Nova Scotia. No inventory,
+          Maritime Bowstrings is a small, made-to-order operation out of Nova Scotia. No inventory,
           no rush, no shortcuts. Your string is made to your specs, when you need it.
         </p>
         <p>
           Have a question before you order? Feel free to reach out directly at{' '}
           <a
-            href="mailto:hello@heritagestrings.com"
+            href="mailto:hello@maritimebowstrings.ca"
             className="text-amber-600 hover:underline"
           >
-            hello@heritagestrings.com
+            hello@maritimebowstrings.ca
           </a>
           .
         </p>

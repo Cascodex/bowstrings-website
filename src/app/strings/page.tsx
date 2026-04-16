@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Strings | Heritage Strings',
+  title: 'Our Strings | Maritime Bowstrings',
   description: 'Browse handmade bowstring options — materials, colors, and configurations.',
 };
 

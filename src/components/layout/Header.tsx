@@ -13,7 +13,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold tracking-wide text-amber-400 hover:text-amber-300 transition-colors"
         >
-          Heritage Strings
+          Maritime Bowstrings
         </Link>
 
         {/* Desktop nav */}

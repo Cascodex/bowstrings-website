@@ -2,7 +2,7 @@ import OrderForm from '@/components/order/OrderForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Order a Bowstring | Heritage Strings',
+  title: 'Order a Bowstring | Maritime Bowstrings',
   description: 'Order a custom handmade bowstring for your longbow or recurve.',
 };
 

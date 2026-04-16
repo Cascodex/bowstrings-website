@@ -30,7 +30,7 @@ export default function Features() {
     <section className="py-20 px-4 bg-stone-50">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-stone-800 text-center mb-12">
-          Why Heritage Strings?
+          Why Maritime Bowstrings?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
