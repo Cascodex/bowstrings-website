@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { STRING_MATERIALS, STRING_COLORS, SERVING_COLOR_OPTIONS, CANADIAN_PROVINCES } from '@/lib/constants';
 import type { OrderFormData } from '@/lib/types';
+import StringVisualizer, { type VisualizerFocus } from './StringVisualizer';
 
 const defaultForm: OrderFormData = {
   name: '',
@@ -28,6 +29,18 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 export default function OrderForm() {
   const [form, setForm] = useState<OrderFormData>(defaultForm);
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
+  const [hoverFocus, setHoverFocus] = useState<VisualizerFocus>(null);
+  const [fieldFocus, setFieldFocus] = useState<VisualizerFocus>(null);
+  const activeFocus: VisualizerFocus = fieldFocus ?? hoverFocus;
+
+  function focusHandlers(target: Exclude<VisualizerFocus, null>) {
+    return {
+      onMouseEnter: () => setHoverFocus(target),
+      onMouseLeave: () => setHoverFocus((h) => (h === target ? null : h)),
+      onFocus: () => setFieldFocus(target),
+      onBlur: () => setFieldFocus((f) => (f === target ? null : f)),
+    };
+  }
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -134,7 +147,7 @@ export default function OrderForm() {
               <option value="Recurve">Recurve</option>
             </select>
           </label>
-          <label className="block">
+          <label className="block" {...focusHandlers('length')}>
             <span className={labelClass}>AMO String Length (inches) *</span>
             <input
               type="text"
@@ -148,6 +161,14 @@ export default function OrderForm() {
           </label>
         </div>
       </fieldset>
+
+      <StringVisualizer
+        focus={activeFocus}
+        primaryColor={form.primaryColor}
+        secondaryColor={form.secondaryColor}
+        servingColor={form.servingColor}
+        amoLength={form.amoLength}
+      />
 
       {/* String Specs */}
       <fieldset className="space-y-4">
@@ -175,7 +196,7 @@ export default function OrderForm() {
           Colors
         </legend>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <label className="block">
+          <label className="block" {...focusHandlers('colors')}>
             <span className={labelClass}>Primary Color *</span>
             <select
               name="primaryColor"
@@ -189,7 +210,7 @@ export default function OrderForm() {
               ))}
             </select>
           </label>
-          <label className="block">
+          <label className="block" {...focusHandlers('colors')}>
             <span className={labelClass}>Secondary Color (optional)</span>
             <select
               name="secondaryColor"
@@ -203,7 +224,7 @@ export default function OrderForm() {
               ))}
             </select>
           </label>
-          <label className="block">
+          <label className="block" {...focusHandlers('colors')}>
             <span className={labelClass}>Serving Color *</span>
             <select
               name="servingColor"
